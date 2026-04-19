@@ -25,7 +25,7 @@ To mitigate this, we propose the **Physics-Guided Dual-Teacher (PGDT)** framewor
 - **GPU**: 1 × NVIDIA GeForce RTX 3090 (24GB)
 - **CUDA**: 12.4
 - **MMDetection**: 3.3.0
-
+```
 **Step 1. Environment Preparation**
 
 First, create a clean conda environment and **ensure it is activated** before proceeding.
@@ -33,7 +33,7 @@ First, create a clean conda environment and **ensure it is activated** before pr
 ```shell
 conda create -n pgdt python=3.8 -y
 conda activate pgdt
-
+```
 **Step 2. Install Core Dependencies**
 
 Install PyTorch and torchvision. Please ensure the `pytorch-cuda` version matches your local driver.
