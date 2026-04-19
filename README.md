@@ -26,18 +26,27 @@ To mitigate this, we propose the **Physics-Guided Dual-Teacher (PGDT)** framewor
 - **CUDA**: 12.4
 - **MMDetection**: 3.3.0
 
-**Step 1.** Create a conda environment and activate it.
+**Step 1. Environment Preparation**
+
+First, create a clean conda environment and **ensure it is activated** before proceeding to the next steps.
+
 ```shell
 conda create -n pgdt python=3.8 -y
 conda activate pgdt
 ```
 
-**Step 2.** Install PyTorch and torchvision (adjust the CUDA version as needed to match your environment).
+**Step 2. Install Core Dependencies**
+
+Install PyTorch and torchvision. Please ensure the `pytorch-cuda` version matches your local driver.
+
 ```shell
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
-**Step 3.** Install MMEngine, MMCV, and MMDetection.
+**Step 3. Install MMDetection Framework**
+
+Install the MMLab family libraries and build MMDetection from source.
+
 ```shell
 pip install -U openmim
 mim install mmengine
@@ -85,16 +94,24 @@ python tools/train.py configs/pgdt/pgdt_faster_rcnn_r50_fpn_10percent_hrsid.py
 ```shell
 python tools/train.py configs/pgdt/pgdt_faster_rcnn_r50_fpn_10percent_ssdd.py
 ```
-*Note: Similarly, change `10percent` to `5percent` for the 5% labeled setting.*
 
 ### Evaluation
-To evaluate the trained model on the test set, use the corresponding config and the saved weights. Example for HRSID 10%:
+To evaluate the trained model on the test set:
 ```shell
 python tools/test.py configs/pgdt/pgdt_faster_rcnn_r50_fpn_10percent_hrsid.py work_dirs/pgdt_faster_rcnn_r50_fpn_10percent_hrsid/latest.pth
 ```
 
 ## 📝 Citation
-
+If you find this project useful in your research, please consider citing our paper:
+```bibtex
+@article{zhang2024pgdt,
+  title={Physics-Guided Dual-Teacher Framework for Semi-Supervised SAR Ship Detection},
+  author={Zhang, Zihao and Li, Ying and Cheng, Lingxiao and Xu, Chujie},
+  journal={IEEE Geoscience and Remote Sensing Letters},
+  year={2024},
+  publisher={IEEE}
+}
+```
 
 ## 🙏 Acknowledgement
 This project is built upon the foundational framework of [MMDetection](https://github.com/open-mmlab/mmdetection). Furthermore, a large part of the semi-supervised training codebase is inspired by and borrowed from [SoftTeacher](https://github.com/microsoft/SoftTeacher). We sincerely thank the original authors for their outstanding open-source contributions!
@@ -103,3 +120,5 @@ This project is built upon the foundational framework of [MMDetection](https://g
 For any questions, please feel free to open an issue or contact `kklt_zhang@dlmu.edu.cn`.
 ```
 
+
+现在去 GitHub 预览一下，保证三个步骤看起来整齐划一！搞定之后，咱们正式开始写 **Response Letter**？
