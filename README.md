@@ -21,7 +21,7 @@ To mitigate this, we propose the **Physics-Guided Dual-Teacher (PGDT)** framewor
 
 Ensure your local environment meets the following specifications before installation:
 
-- `Ubuntu`
+- `Ubuntu 24.04`
 - `CUDA=12.4`
 - `Anaconda3` with `python=3.8`
 - `PyTorch=2.0+` (Please ensure the `pytorch-cuda=11.8` matches your local driver)
